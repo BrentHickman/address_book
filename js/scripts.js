@@ -117,5 +117,5 @@ function onSubmit(event){
 
     myAddressBook.addContact(tempContact);
     addNewLine(myAddressBook.currentId);
-}
+};
 
