@@ -5,7 +5,14 @@ function Contact(addressName, addressAddress, addressPhone, addressEmail){
     this.addressAddress = addressAddress;
     this.addressPhone = addressPhone;
     this.addressEmail = addressEmail;
+
 }
+
+// function Email(workEmail, personalEmail, otherEmail) {
+//   this.workEmail = workEmail;
+//   this.personalEmail = personalEmail;
+//   this.otherEmail = otherEmail;
+// } 
 
 function AddressBook(){
     this.contacts = {};
@@ -113,7 +120,10 @@ function onSubmit(event){
         document.getElementById("placeNameId").value, 
         document.getElementById("placeAddressId").value, 
         document.getElementById("placePhoneId").value,
-        document.getElementById("placePhoneId").value);
+        document.getElementById("placeEmailId").value,
+        document.getElementById("placeWorkEmailId").value,
+        document.getElementById("placePersonalEmailId").value
+        );
 
     myAddressBook.addContact(tempContact);
     addNewLine(myAddressBook.currentId);
