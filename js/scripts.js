@@ -1,16 +1,15 @@
 let myAddressBook = new AddressBook();
-addressEmail = new Email();
 
-function Email(workEmail, personalEmail){
+function Email(){
   this.workEmail = workEmail;
   this.personalEmail = personalEmail;
 }
 
-function Contact(addressName, addressAddress, addressPhone, addressEmail, personalEmail, workEmail){
+function Contact(addressName, addressAddress, addressPhone, Email){
     this.addressName = addressName;
     this.addressAddress = addressAddress;
     this.addressPhone = addressPhone;
-    this.addressEmail = addressEmail;
+    this.addressEmail = {Email};
     // this.workEmail = workEmail;
     // this.personalEmail = personalEmail;
 }
