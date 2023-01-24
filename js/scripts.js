@@ -1,24 +1,24 @@
 let myAddressBook = new AddressBook();
 
-function Email(){
+
+
+function Contact(addressName, addressAddress, addressPhone, workEmail, personalEmail){
+    this.addressName = addressName;
+    this.addressAddress = addressAddress;
+    this.addressPhone = addressPhone;
+    this.email = {workEmail, personalEmail};
+}
+
+let multEmails = new Email();
+
+function Email(workEmail, personalEmail){
   this.workEmail = workEmail;
   this.personalEmail = personalEmail;
 }
 
-function Contact(addressName, addressAddress, addressPhone, Email){
-    this.addressName = addressName;
-    this.addressAddress = addressAddress;
-    this.addressPhone = addressPhone;
-    this.addressEmail = {Email};
-    // this.workEmail = workEmail;
-    // this.personalEmail = personalEmail;
+Email.prototype.addEmail = function(emails){
+  this.email = emails;
 }
-
-
-// Email.prototype.addContact = function(contact){
-//   contact.id = this.assignId();
-//   this.contacts[contact.id] = contact;
-// }
 
 function AddressBook(){
     this.contacts = {};
@@ -126,12 +126,15 @@ function onSubmit(event){
         document.getElementById("placeNameId").value, 
         document.getElementById("placeAddressId").value, 
         document.getElementById("placePhoneId").value,
-        document.getElementById("placeEmailId").value,
-        document.getElementById("placeWorkEmailId").value,
-        document.getElementById("placePersonalEmailId").value
+        document.getElementById("placeEmailId").value
         );
+    let tempMultEmail = new Email(
+      document.getElementById("placeWorkEmailId").value,
+      document.getElementById("placePersonalEmailId").value
+    );
 
     myAddressBook.addContact(tempContact);
+    multEmails.addEmail(tempMultEmail);
     addNewLine(myAddressBook.currentId);
 };
 
