@@ -1,18 +1,25 @@
 let myAddressBook = new AddressBook();
+addressEmail = new Email();
 
-function Contact(addressName, addressAddress, addressPhone, addressEmail){
+function Email(workEmail, personalEmail){
+  this.workEmail = workEmail;
+  this.personalEmail = personalEmail;
+}
+
+function Contact(addressName, addressAddress, addressPhone, addressEmail, personalEmail, workEmail){
     this.addressName = addressName;
     this.addressAddress = addressAddress;
     this.addressPhone = addressPhone;
     this.addressEmail = addressEmail;
-
+    // this.workEmail = workEmail;
+    // this.personalEmail = personalEmail;
 }
 
-// function Email(workEmail, personalEmail, otherEmail) {
-//   this.workEmail = workEmail;
-//   this.personalEmail = personalEmail;
-//   this.otherEmail = otherEmail;
-// } 
+
+// Email.prototype.addContact = function(contact){
+//   contact.id = this.assignId();
+//   this.contacts[contact.id] = contact;
+// }
 
 function AddressBook(){
     this.contacts = {};
