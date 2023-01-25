@@ -7,13 +7,13 @@ function Email(workEmail, personalEmail){
   this.personalEmail = personalEmail;
 };
 
-function Contact(addressName, addressAddress, addressPhone){
-  let workEmail = document.getElementById("placeWorkEmailId").value;
-  let personalEmail = document.getElementById("placePersonalEmailId").value;
+function Contact(addressName, addressAddress, addressPhone, workEmail, personalEmail){
+  // let workEmail = document.getElementById("placeWorkEmailId").value;
+  // let personalEmail = document.getElementById("placePersonalEmailId").value;
   this.addressName = addressName;
   this.addressAddress = addressAddress;
   this.addressPhone = addressPhone;
-  this.email = {workEmail, personalEmail};
+  this.email = new Email(workEmail, personalEmail);
 }
 
 Email.prototype.addEmail = function(email){
@@ -121,15 +121,17 @@ window.addEventListener("load", function(){
 function onSubmit(event){
   event.preventDefault();
 
-  let tempMultEmail = new Email(
+  // let tempMultEmail = new Email(
     document.getElementById("placeWorkEmailId").value,
     document.getElementById("placePersonalEmailId").value
-  );
+  // );
 
   let tempContact = new Contact(
       document.getElementById("placeNameId").value, 
       document.getElementById("placeAddressId").value, 
-      document.getElementById("placePhoneId").value
+      document.getElementById("placePhoneId").value,
+      document.getElementById("placeWorkEmailId").value,
+      document.getElementById("placePersonalEmailId").value
       // document.getElementById("placeEmailId").value
       );
 
