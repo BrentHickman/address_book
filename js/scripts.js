@@ -122,8 +122,8 @@ function onSubmit(event){
   event.preventDefault();
 
   // let tempMultEmail = new Email(
-    document.getElementById("placeWorkEmailId").value,
-    document.getElementById("placePersonalEmailId").value
+    // document.getElementById("placeWorkEmailId").value,
+    // document.getElementById("placePersonalEmailId").value
   // );
 
   let tempContact = new Contact(
@@ -136,7 +136,7 @@ function onSubmit(event){
       );
 
   myAddressBook.addContact(tempContact);
-  multEmails.addEmail(tempMultEmail);
+  // multEmails.addEmail(tempMultEmail);
   addNewLine(myAddressBook.currentId);
 };
 
